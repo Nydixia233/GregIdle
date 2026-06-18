@@ -1,0 +1,44 @@
+# 本地参考区：除 README 外全部忽略（版权 + 体积，见 _local/README.md）
+/_local/*
+!/_local/README.md
+
+# 依赖
+node_modules/
+.pnp
+.pnp.js
+
+# 构建产物
+dist/
+dist-ssr/
+build/
+*.local
+
+# 日志
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# 环境变量 / 密钥
+.env
+.env.*
+!.env.example
+
+# 编辑器 / 系统
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# 测试 / 缓存
+coverage/
+.vite/
+.cache/
