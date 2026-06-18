@@ -24,11 +24,9 @@ logs/
 # 环境变量 / 密钥
 .env
 .env.*
-!.env.example
 
 # 编辑器 / 系统
-.vscode/*
-!.vscode/extensions.json
+.vscode/
 .idea/
 .DS_Store
 *.suo

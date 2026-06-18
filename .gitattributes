@@ -1,0 +1,15 @@
+# 统一换行，避免跨平台 / 多协作者 diff 噪音
+* text=auto eol=lf
+
+# 二进制素材不做换行处理
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
