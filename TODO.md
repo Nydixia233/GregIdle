@@ -14,7 +14,7 @@
       验收：文档互链无死链，`_local/` 正确忽略，已推送 main ✓
 
 - [ ] **T02 Vite + React + TypeScript + Tailwind 初始化** · [工单](tasks/T02-scaffold-init.md)
-      目标：`npm run dev` 能起空白页；目录结构按设计文档 §3
+      目标：`pnpm dev` 能起空白页；目录结构按设计文档 §3
       验收：dev server 启动无报错，TS 严格模式开
 
 - [ ] **T03 接入 break_infinity.js 数值底座** · [工单](tasks/T03-decimal-base.md)
@@ -35,7 +35,7 @@
 
 - [ ] **T07 ESLint + Prettier 配置** · [工单](tasks/T07-lint-format.md)
       目标：落地 AGENTS.md §4 引用的「以配置为准」
-      验收：`npm run lint` 通过，规则覆盖 TS/React
+      验收：`pnpm lint` 通过，规则覆盖 TS/React
 
 - [ ] **T08 CI：.github/workflows/ci.yml** · [工单](tasks/T08-ci.md)
       目标：push 自动跑 lint + typecheck + test + build；deploy 到 GitHub Pages
@@ -46,6 +46,13 @@
       验收：~20-30 资源 + ~8-12 机器 + ~30-45 配方落表，单位锚定 1 tick=1 秒，数值标 GT5U 出处
 
 > T09 原为 Phase 1「静态游戏数据」，因引擎需先有数据可跑而前置到 Phase 0。
+
+- [ ] **T36 共享 TypeScript 类型定义（`src/types.ts`）** · [工单](tasks/T36-shared-types.md)
+      目标：`Era`/`VoltageTier`/`Resource`/`MachineDef`/`Recipe`/`PlayerState` 等跨 engine/data/stores 共享类型集中定义，避免三处各自定义打架
+      验收：T04/T05/T06 均从此处 import 类型；`tsc --noEmit` 通过
+      依赖：T03（Decimal 定了才能定 `resources: Record<string, Decimal>`）；前置于 T04/T05/T06
+
+> T36 全局编号接最大号续，但逻辑位于 Phase 0、紧跟 T03。执行顺序：T02 → T03 → **T36** → T04/T05/T06。
 
 ---
 

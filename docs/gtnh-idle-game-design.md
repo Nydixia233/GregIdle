@@ -146,9 +146,7 @@ greg-idle/
 │   └── main.tsx
 │
 └── docs/
-    └── superpowers/
-        └── specs/
-            └── 2026-06-19-gtnh-idle-game-design.md  ← 本文档
+    └── gtnh-idle-game-design.md  ← 本文档
 ```
 
 ---
@@ -436,10 +434,10 @@ type QuestReward =
 
 ```typescript
 interface EnergyState {
-  steamStored: number;
-  steamCapacity: number;
-  euStored: number;
-  euCapacity: number;
+  steamStored: Decimal;
+  steamCapacity: Decimal;
+  euStored: Decimal;
+  euCapacity: Decimal;
 }
 
 interface EnergyDelta {
@@ -456,8 +454,8 @@ interface EnergyDelta {
 
 ```typescript
 interface PlayerState {
-  // 资源
-  resources: Record<string, number>;
+  // 资源（玩家持有量，会增长到天文数字 → Decimal）
+  resources: Record<string, Decimal>;
 
   // 能源
   energy: EnergyState;
@@ -473,12 +471,14 @@ interface PlayerState {
   unlockedEras: Era[];
   
   // 统计
-  totalProduction: number;
-  totalPlayTime: number;          // 毫秒
-  lastTickTime: number;           // 最后 tick 时间戳
+  totalProduction: Decimal;       // 累积产量，无上界 → Decimal
+  totalPlayTime: number;          // 毫秒（计时量，非游戏数值，保持 number）
+  lastTickTime: number;           // 最后 tick 时间戳（同上）
   createdAt: number;
 }
 ```
+
+> **数值类型约定**：会随游戏进程无上界增长的「累积量 / 持有量」一律用 `Decimal`（`break_infinity.js`）——如 `resources`、`totalProduction`、`EnergyState` 的 `*Stored`/`*Capacity`。而**配方系数**（`Recipe.inputs/outputs/byproducts`，永远是 2、4 这类小整数）、**瞬时增量**（`EnergyDelta` 的单 tick 净流量，量级与电压同阶 ≤ ~5×10⁸，在安全整数内）和**计时量**（毫秒时间戳）保持原生 `number`——它们不会溢出，用 Decimal 反而徒增开销。这条约定与 AGENTS.md §4「数值统一走 Decimal」一致：约束针对的是无界游戏数值，不是有界常量、瞬时量与时间戳。
 
 ---
 

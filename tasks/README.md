@@ -40,6 +40,7 @@
 | T07 | [ESLint + Prettier 配置](T07-lint-format.md) | ⬜ 未开始 | — |
 | T08 | [CI workflow](T08-ci.md) | ⬜ 未开始 | — |
 | T09 | [Phase 1 数值草表（前置于引擎）](T09-data-draft.md) | ⬜ 未开始 | — |
+| T36 | [共享类型定义 src/types.ts（逻辑属 Phase 0，紧跟 T03）](T36-shared-types.md) | ⬜ 未开始 | — |
 
 ### Phase 1 · 最小可玩版（T10-T19）
 

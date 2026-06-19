@@ -21,6 +21,7 @@
 
 - [ ] 认领工单。
 - [ ] 定义 `SaveEnvelope { schemaVersion, timestamp, gameState, checksum }`。
+- [ ] `checksum`：用简单非加密哈希（如 FNV-1a / djb2）对序列化后的 `gameState` 算值，仅用于检测手改 / 存档损坏，不用于安全。
 - [ ] Decimal 自定义 serialize（→ 字符串）/ deserialize。
 - [ ] `migrate(save)`：按版本顺序逐级迁移骨架（当前仅 v1）。
 - [ ] 读到高于当前版本 → 拒绝加载并提示。

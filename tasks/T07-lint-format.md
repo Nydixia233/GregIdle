@@ -23,13 +23,13 @@
 - [ ] 认领工单。
 - [ ] ESLint（typescript-eslint + react hooks 规则）。
 - [ ] Prettier（2 空格，与 AGENTS.md §4 一致）。
-- [ ] `npm run lint` / `npm run format` scripts。
+- [ ] `pnpm lint` / `pnpm format` scripts。
 - [ ] 对现有代码跑一遍，修干净。
 - [ ] DoD 自检。
 
 ## DoD
 
-- [ ] `npm run lint` 通过。
+- [ ] `pnpm lint` 通过。
 - [ ] 规则与 AGENTS.md §4 / conventions.md 不冲突。
 - [ ] 未写入本地绝对路径。
 

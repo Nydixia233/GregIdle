@@ -10,7 +10,7 @@
 
 ## 目标
 
-初始化 Vite + React 18 + TypeScript + Tailwind 项目，`npm run dev` 能起空白页，目录结构按设计文档 §3 落地。
+初始化 Vite + React 18 + TypeScript + Tailwind 项目，`pnpm dev` 能起空白页，目录结构按设计文档 §3 落地。
 
 ## 输入来源
 
@@ -21,7 +21,7 @@
 ## 执行步骤
 
 - [ ] 认领工单，更新 TODO 与本文件状态。
-- [ ] `npm create vite@latest` 选 react-ts，或手配 package.json。
+- [ ] `pnpm create vite@latest` 选 react-ts，或手配 package.json。
 - [ ] 配 Tailwind + PostCSS，注入 §4.6 工业风 CSS 变量。
 - [ ] TS 严格模式（`strict: true`）。
 - [ ] 建 §3 目录骨架：`src/{engine,data,stores,components,hooks,utils}`。
@@ -29,7 +29,7 @@
 
 ## DoD
 
-- [ ] `npm run dev` 启动无报错，渲染空白页。
+- [ ] `pnpm dev` 启动无报错，渲染空白页。
 - [ ] `tsc --noEmit` 通过，strict 开。
 - [ ] 目录结构与设计文档 §3 一致。
 - [ ] CSS 变量可用（§4.6）。
