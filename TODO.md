@@ -13,31 +13,31 @@
       目标：AGENTS / VERSION / STATUS / data-sourcing / conventions / glossary / errors 就位
       验收：文档互链无死链，`_local/` 正确忽略，已推送 main ✓
 
-- [ ] **T02 Vite + React + TypeScript + Tailwind 初始化**
+- [ ] **T02 Vite + React + TypeScript + Tailwind 初始化** · [工单](tasks/T02-scaffold-init.md)
       目标：`npm run dev` 能起空白页；目录结构按设计文档 §3
       验收：dev server 启动无报错，TS 严格模式开
 
-- [ ] **T03 接入 break_infinity.js 数值底座**
+- [ ] **T03 接入 break_infinity.js 数值底座** · [工单](tasks/T03-decimal-base.md)
       目标：Decimal 贯穿引擎与存档，确定唯一数值类型
       验收：`format.ts`（大数格式化 K/M/B/…）单测通过
 
-- [ ] **T04 SaveEnvelope schema 版本头 + migrate() 骨架**
+- [ ] **T04 SaveEnvelope schema 版本头 + migrate() 骨架** · [工单](tasks/T04-save-envelope.md)
       目标：存档带 `schemaVersion`，预留逐级迁移
       验收：v1 存档读写往返测试通过；Decimal 自定义 serialize/deserialize 可用
 
-- [ ] **T05 src/engine/ tick 纯函数骨架 + Vitest**
+- [ ] **T05 src/engine/ tick 纯函数骨架 + Vitest** · [工单](tasks/T05-engine-tick.md)
       目标：在线/离线共用的纯函数 tick；`vitest.config.ts` 就位
       验收：tick 推进 / 超频倍率 / 离线结算数值自洽的核心单测通过
 
-- [ ] **T06 Zustand store + persist**
+- [ ] **T06 Zustand store + persist** · [工单](tasks/T06-store-persist.md)
       目标：核心 game store，persist 接 T04 的 serialize
       验收：状态变更触发 selector 重渲染；刷新页面存档不丢
 
-- [ ] **T07 ESLint + Prettier 配置**
+- [ ] **T07 ESLint + Prettier 配置** · [工单](tasks/T07-lint-format.md)
       目标：落地 AGENTS.md §4 引用的「以配置为准」
       验收：`npm run lint` 通过，规则覆盖 TS/React
 
-- [ ] **T08 CI：.github/workflows/ci.yml**
+- [ ] **T08 CI：.github/workflows/ci.yml** · [工单](tasks/T08-ci.md)
       目标：push 自动跑 lint + typecheck + test + build
       验收：首次 push 后 Actions 全绿
 
