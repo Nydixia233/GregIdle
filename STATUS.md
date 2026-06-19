@@ -15,27 +15,19 @@
 
 ## 已完成
 
-- [x] 设计文档 v1.3（8 条有效问题修正）
+- [x] T01 设计文档 v1.3（8 条有效问题修正）+ 治理文档体系
 - [x] GitHub 仓库创建并推送
 - [x] `.gitignore` + `.gitattributes`
-- [x] 治理文档：AGENTS.md / VERSION.md
+- [x] 治理文档：AGENTS.md / VERSION.md / TODO.md
 - [x] docs：data-sourcing / conventions / glossary / errors（README + 模板）
+
+> 完整任务清单见 [TODO.md](TODO.md)（Phase 下挂 `T+编号`，全局连续）。本文件只记此刻位置与卡点，不再重复列任务。
 
 ## 下一步
 
-**Phase 0：项目脚手架**（设计文档 §11，单独开一轮）
+**Phase 0：项目脚手架** —— 见 [TODO.md](TODO.md) 的 `T02`～`T08`。
 
-- [ ] Vite + React + TypeScript + Tailwind 初始化
-- [ ] 接入 `break_infinity.js`（Decimal）作为数值底座 —— 先定，渗透最广
-- [ ] `SaveEnvelope` schema 版本头 + `migrate()` 骨架 —— 与 Decimal serialize 一起定
-- [ ] `src/engine/` tick 纯函数骨架 + Vitest 核心单测 + `vitest.config.ts`
-- [ ] Zustand store + persist（含 Decimal 自定义 serialize/deserialize）
-- [ ] 目录结构按设计文档 §3 落地
-- [ ] ESLint + Prettier 配置（AGENTS.md §4 已引用"以配置为准"，需落地）
-- [ ] `.github/workflows/ci.yml`：lint + typecheck + test + build（Web 项目 CI 成本低、收益即时）
-
-> Phase 0 依赖顺序：**大数底座 + SaveEnvelope（渗透最广）→ 引擎 tick + Vitest → store/persist**，避免回头改序列化。
-> ESLint/Prettier/CI/Vitest 是脚手架的自然组成部分，与 Phase 0 一起建，不算额外治理。
+依赖顺序：**大数底座 + SaveEnvelope（T02/T03，渗透最广）→ 引擎 tick + Vitest（T04）→ store/persist（T05）**，避免回头改序列化。ESLint/Prettier/CI（T06/T07）是脚手架自然组成，与初始化一起建。
 
 ## 治理文档「何时建什么」触发清单
 
@@ -43,7 +35,8 @@
 
 | 文件 | 触发条件 |
 |------|----------|
-| `TODO.md` / 中央工作队列 | 任务多到 STATUS「下一步」列表装不下时 |
+| ~~`TODO.md`~~ | ✅ 已建（任务清单，Phase 下挂 T） |
+| `CHANGELOG.md` | 第一个可发布版本（Phase 1 完成、有可玩 build）时按版本号组织，给玩家看。当前"开发日志"职责由 git commit 正文承担，不提前建 |
 | `docs/workflow.md`（开发 SOP） | 出现「反复做错的固定流程」，从 errors 提炼时——不凭空写 |
 | `templates/`（组件/store/test 模板） | 建到第 3-4 个同类文件、确实在复制粘贴时 |
 | `docs/ui-mockups/` HTML 原型 | 某个复杂 UI 写 React 前需要先验证交互时（可选，ASCII 布局够用就跳过） |

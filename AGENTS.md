@@ -37,13 +37,14 @@
 | **P0** | `AGENTS.md`（本文件） | 铁律、协作规范、代码规范 |
 | **P0** | [docs/gtnh-idle-game-design.md](docs/gtnh-idle-game-design.md) | 设计总纲：定位、数据模型、时代进阶、路线图 |
 | **P0** | [VERSION.md](VERSION.md) | 数值锚定单一事实源 |
-| **P0** | [STATUS.md](STATUS.md) | 当前进度、下一步、卡点（频繁更新） |
+| **P0** | [STATUS.md](STATUS.md) | 当前进度、卡点（频繁更新） |
+| **P0** | [TODO.md](TODO.md) | 任务清单：Phase 下挂 `T+编号`，认领/打勾在此 |
 | **P0** | [docs/errors/README.md](docs/errors/README.md) | 已踩过的坑，避免重复 |
 | P1 | [docs/data-sourcing.md](docs/data-sourcing.md) | 写数据 / 改数值前看：溯源格式与已锚定清单 |
 | P1 | [docs/conventions.md](docs/conventions.md) | 命名 / id / 文件组织约定 |
 | P1 | [docs/glossary.md](docs/glossary.md) | GTNH 术语 → 游戏内作用 |
 
-> 阅读顺序：**设计文档（做什么）→ STATUS（做到哪）→ 动手**。
+> 阅读顺序：**设计文档（做什么）→ STATUS（做到哪）→ TODO（做哪件 T）→ 动手**。
 
 ---
 
