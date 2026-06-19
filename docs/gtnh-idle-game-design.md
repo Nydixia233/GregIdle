@@ -486,6 +486,9 @@ interface PlayerState {
 
 ### 6.1 主 Tick 循环
 
+> **时间单位约定**：**1 游戏 tick = 1 真实秒**。所有配方耗时（`Recipe.baseDuration`）、机器基础速度（`MachineDef.baseSpeed`）、产率（`+x/s`）均以此为单位——`baseDuration: 12.8` 即 12.8 秒。
+> 注意区分两层「tick」：渲染帧 ~16ms 触发一次（rAF），但游戏逻辑按「秒」推进——每帧用 `deltaTime` 累加，跨过 1 秒边界才结算一次游戏 tick。这样在线 60fps 与离线 1s/步用的是同一套「秒」语义，数值自洽（见 6.2）。GTNH 原版 20 MC-tick/秒的换算不在 GregIdle 建模——放置翻译以「秒」为最小粒度。
+
 ```
 每帧 (requestAnimationFrame, ~16ms):
 
@@ -1033,6 +1036,10 @@ function migrate(save: SaveEnvelope): SaveEnvelope { /* v1→v2→…→current 
 | 2026-06-19 | 项目命名 GregIdle | GTNH 社区内部分享，Greg 梗亲切简短好记，仓库 / title / 存档键名统一 |
 | 2026-06-19 | 数据锚定 GTNH 2.9.0-beta-1 | 电压、蒸汽换算、超频倍率、材料归属均对照 GT5-Unofficial 源码 + Dev-Doc + Wiki 交叉核对 |
 | 2026-06-19 | GregIdle 是放置翻译非复刻 | 保留 GTNH 核心体验（副产物、电压、产线规划），将数千配方抽象为放置可玩规模 |
+| 2026-06-19 | 包管理器 pnpm | 比 npm 更快、硬链接省盘；锁文件 `pnpm-lock.yaml` 入库 |
+| 2026-06-19 | 1 游戏 tick = 1 真实秒 | 配方耗时/产率的统一数值单位；在线 rAF 与离线定步长共用「秒」语义，数值自洽（见 §6.1） |
+| 2026-06-19 | 数值草表前置（T09）于引擎 | 引擎需先有真实数据可跑，否则单测只能用假数据、写完返工 |
+| 2026-06-19 | 部署 GitHub Pages | 已在 GitHub，零额外账号；CI（T08）push 即 lint/test/build/deploy |
 
 ---
 

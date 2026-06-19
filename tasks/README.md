@@ -39,8 +39,9 @@
 | T06 | [Zustand store + persist](T06-store-persist.md) | ⬜ 未开始 | — |
 | T07 | [ESLint + Prettier 配置](T07-lint-format.md) | ⬜ 未开始 | — |
 | T08 | [CI workflow](T08-ci.md) | ⬜ 未开始 | — |
+| T09 | [Phase 1 数值草表（前置于引擎）](T09-data-draft.md) | ⬜ 未开始 | — |
 
-### Phase 1 · 最小可玩版（T09-T19）
+### Phase 1 · 最小可玩版（T10-T19）
 
 > 工单按需 spin（规则 6）。当前只在 [TODO.md](../TODO.md) 登记，未展开为工单文件。
 

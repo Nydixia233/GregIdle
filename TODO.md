@@ -38,8 +38,14 @@
       验收：`npm run lint` 通过，规则覆盖 TS/React
 
 - [ ] **T08 CI：.github/workflows/ci.yml** · [工单](tasks/T08-ci.md)
-      目标：push 自动跑 lint + typecheck + test + build
+      目标：push 自动跑 lint + typecheck + test + build；deploy 到 GitHub Pages
       验收：首次 push 后 Actions 全绿
+
+- [ ] **T09 Phase 1 数值草表（资源/机器/配方）** · [工单](tasks/T09-data-draft.md)
+      目标：Stone→Steam→LV 入门的具体数值，引擎的「米」。前置于 T05，数据源 `_local/` config + questbook
+      验收：~20-30 资源 + ~8-12 机器 + ~30-45 配方落表，单位锚定 1 tick=1 秒，数值标 GT5U 出处
+
+> T09 原为 Phase 1「静态游戏数据」，因引擎需先有数据可跑而前置到 Phase 0。
 
 ---
 
@@ -47,18 +53,18 @@
 
 > Stone → Steam → LV 入门，第一版终点：造出第一台 LV 电力机器（设计文档 §11）。
 
-- [ ] **T09 三栏布局 + TopBar / BottomBar 框架**
-- [ ] **T10 ResourcePanel + ResourceRow 组件**
-- [ ] **T11 WorkshopPanel + MachineCard + RecipeSelector 组件**
-- [ ] **T12 QuestBookPanel + QuestEraTabs + EraRoadmap 组件**
-- [ ] **T13 useGameLoop tick 主循环（rAF）**
-- [ ] **T14 useOfflineCalc 离线结算（复用引擎纯函数）**
-- [ ] **T15 Stone/Steam/LV 数据：20-30 资源 + 8-12 机器 + 30-45 配方**
-      验收：数值标注出处（data-sourcing.md），关键数对照 GT5U 源码
+- [ ] **T10 三栏布局 + TopBar / BottomBar 框架**
+- [ ] **T11 ResourcePanel + ResourceRow 组件**
+- [ ] **T12 WorkshopPanel + MachineCard + RecipeSelector 组件**
+- [ ] **T13 QuestBookPanel + QuestEraTabs + EraRoadmap 组件**
+- [ ] **T14 useGameLoop tick 主循环（rAF）**
+- [ ] **T15 useOfflineCalc 离线结算（复用引擎纯函数）**
 - [ ] **T16 前 5 分钟手动采集 → 解锁自动采集点 + 工作台队列**
 - [ ] **T17 工业仪表盘 CSS 主题（§4.6 变量）**
 - [ ] **T18 存档/读档 + 导出/导入**
 - [ ] **T19 第一版终点验收：通关到第一台 LV 电力机器**
+
+> Phase 1 原「T15 静态数据」已被前置的 T09 数值草表吸收，故移除，其余顺移。
 
 ---
 

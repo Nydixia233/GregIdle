@@ -69,6 +69,8 @@
 - **引擎纯函数**：`src/engine/` 内不得有 I/O、不得读 store / localStorage / DOM；输入状态 → 输出新状态。在线 tick 与离线结算共用同一份。
 - **数值统一走 Decimal**：资源量 / 速率 / 倍率一律用 `break_infinity.js` 的 Decimal，不混用原生 number 做游戏数值。
 - **数据与逻辑分离**：`src/data/` 纯静态配置，不含逻辑。
+- **时间单位固定**：1 游戏 tick = 1 秒。所有配方耗时 / 产率 / `baseDuration` 以此为基准换算，不得各处自定义单位。
+- **包管理器固定 pnpm**：用 `pnpm` 安装 / 运行脚本，不混用 npm / yarn（避免 lockfile 冲突）。
 
 ### 注释与格式
 - 类 / 接口 / 重要函数加中文注释，说明意图而非复述代码。

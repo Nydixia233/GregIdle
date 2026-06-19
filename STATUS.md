@@ -23,11 +23,20 @@
 
 > 完整任务清单见 [TODO.md](TODO.md)（Phase 下挂 `T+编号`，全局连续）。本文件只记此刻位置与卡点，不再重复列任务。
 
+## 开工前已定的硬约束（2026-06-19）
+
+| 决定 | 值 | 影响 |
+|------|-----|------|
+| 包管理器 | **pnpm** | T02 起所有命令 |
+| 时间单位 | **1 tick = 1 秒** | 所有 `baseDuration` / 产率的数值基准（设计文档 §6.1） |
+| Phase 1 数值表 | **前置为 T09，先于引擎落表** | T05 引擎有真实数据可跑 |
+| 部署目标 | **GitHub Pages** | T08 CI deploy |
+
 ## 下一步
 
-**Phase 0：项目脚手架** —— 见 [TODO.md](TODO.md) 的 `T02`～`T08`。
+**Phase 0：项目脚手架** —— 见 [TODO.md](TODO.md) 的 `T02`～`T09`。
 
-依赖顺序：**大数底座 + SaveEnvelope（T02/T03，渗透最广）→ 引擎 tick + Vitest（T04）→ store/persist（T05）**，避免回头改序列化。ESLint/Prettier/CI（T06/T07）是脚手架自然组成，与初始化一起建。
+依赖顺序：**T02 脚手架（pnpm）→ T03 大数底座 + T04 SaveEnvelope（渗透最广）→ T09 数值草表（引擎的米）→ T05 引擎 tick + Vitest → T06 store/persist**，避免回头改序列化。T07 ESLint/Prettier、T08 CI 是脚手架自然组成，与初始化一起建。
 
 ## 治理文档「何时建什么」触发清单
 
