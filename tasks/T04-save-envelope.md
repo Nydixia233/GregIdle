@@ -4,13 +4,14 @@
 > 状态：⬜ 未开始
 > 认领窗口：—
 > 类型：`引擎`
-> 文件锁：`src/utils/storage.ts` / `src/data/save.ts`（新建，SaveEnvelope 类型 + migrate）
+> 文件锁：`src/utils/storage.ts` / `src/utils/save.ts`（新建，SaveEnvelope 类型 + migrate + serialize 逻辑）
 
 ---
 
 ## 目标
 
 存档带 `schemaVersion` 头，预留逐级迁移；Decimal 字段自定义 serialize/deserialize。与 T03 的大数底座绑定，须一起定。
+逻辑（`migrate`/serialize）放 `src/utils/`，不放 `src/data/`——后者按 AGENTS.md §4 只存纯静态配置。`SaveEnvelope` 是存档系统局部类型（§9），随逻辑放 `src/utils/save.ts`，不进 T36 的核心域类型 `src/types.ts`。
 
 ## 输入来源
 

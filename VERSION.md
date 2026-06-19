@@ -62,6 +62,8 @@ GregIdle 的数值几乎全部来自 GT5-Unofficial 这一个 mod：
 
 > 源码已克隆到本地参考区（不入库）：`_local/gt5u-src/`、`_local/structurelib-src/`、`_local/gtnhlib-src/`、`_local/nhcoremod-src/`，均对应上述锁定版本。完整 mod 清单见 `_local/mods-manifest.txt`（241 个）。
 
+> ⚠️ **这些源码树是「脱离 git 的快照」**（无各自的 `.git`），本机无法用 `git` 命令直接证明它们就是上表的 tag/commit。因此**数值溯源以「内容 + `文件:行号`」为准，不依赖 git 校验**（见 [docs/data-sourcing.md](docs/data-sourcing.md)）。若需可验证性，可按上表 tag 重新 `git clone` 带 `.git` 的 checkout 比对。引用源码时务必标 `文件:行号`，行号对应上表锁定版本。
+
 ---
 
 ## 4. GregIdle 设计文档锚点

@@ -13,7 +13,7 @@
       目标：AGENTS / VERSION / STATUS / data-sourcing / conventions / glossary / errors 就位
       验收：文档互链无死链，`_local/` 正确忽略，已推送 main ✓
 
-- [ ] **T02 Vite + React + TypeScript + Tailwind 初始化** · [工单](tasks/T02-scaffold-init.md)
+- [~] **T02 Vite + React + TypeScript + Tailwind 初始化** · [工单](tasks/T02-scaffold-init.md)（认领：主控，2026-06-19）
       目标：`pnpm dev` 能起空白页；目录结构按设计文档 §3
       验收：dev server 启动无报错，TS 严格模式开
 

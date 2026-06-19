@@ -32,7 +32,7 @@
 | 编号 | 工单 | 状态 | 认领窗口 |
 |------|------|------|----------|
 | T01 | 治理 / 记忆文档体系 | 🟢 完成 | 主控 |
-| T02 | [Vite + React + TS + Tailwind 初始化](T02-scaffold-init.md) | ⬜ 未开始 | — |
+| T02 | [Vite + React + TS + Tailwind 初始化](T02-scaffold-init.md) | 🟡 进行中 | 主控 |
 | T03 | [接入 break_infinity.js 数值底座](T03-decimal-base.md) | ⬜ 未开始 | — |
 | T04 | [SaveEnvelope + migrate() 骨架](T04-save-envelope.md) | ⬜ 未开始 | — |
 | T05 | [engine tick 纯函数 + Vitest](T05-engine-tick.md) | ⬜ 未开始 | — |

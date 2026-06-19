@@ -1,8 +1,8 @@
 # T02：Vite + React + TS + Tailwind 初始化
 
 > TODO 回链：[`../TODO.md`](../TODO.md) T02
-> 状态：⬜ 未开始
-> 认领窗口：—
+> 状态：🟡 进行中
+> 认领窗口：主控
 > 类型：`脚手架`
 > 文件锁：`package.json` / `vite.config.ts` / `tsconfig.json` / `tailwind.config.ts` / `postcss.config.js` / `index.html` / `src/main.tsx` / `src/App.tsx`
 
@@ -38,6 +38,7 @@
 ## 进度记录
 
 - 初始：待认领。
+- 2026-06-19：认领（主控），状态 → 🟡 进行中。尚未动工（无 package.json）。
 
 ## 产出链接
 
