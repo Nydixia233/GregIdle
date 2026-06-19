@@ -15,7 +15,7 @@
 ## 输入来源
 
 - [docs/gtnh-idle-game-design.md](../docs/gtnh-idle-game-design.md) §5.9 PlayerState / §2 状态管理 / §9 存档
-- 依赖 T03（Decimal）、T04（SaveEnvelope serialize）
+- 依赖 T03（Decimal）、T36（共享类型 `src/types.ts`）、T04（SaveEnvelope serialize）
 - [TODO.md](../TODO.md)
 
 ## 执行步骤

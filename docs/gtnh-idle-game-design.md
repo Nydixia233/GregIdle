@@ -970,15 +970,16 @@ function migrate(save: SaveEnvelope): SaveEnvelope { /* v1→v2→…→current 
 
 ### Phase 0：骨架搭建（预计 1 周）
 
-- [ ] Vite + React + TypeScript + Tailwind 项目初始化
-- [ ] 目录结构搭建
-- [ ] `src/data/` 核心类型与基础数据定义
-- [ ] `src/engine/` tick / recipe / era / quest 骨架
-- [ ] Zustand store 初始化 + persist 中间件（含 Decimal 自定义 serialize/deserialize）
-- [ ] 大数底座：接入 `break_infinity.js`，引擎算式与存档统一走 Decimal（先定，后面全靠它）
-- [ ] 存档系统（storage.ts）+ `SaveEnvelope` schema 版本头 + `migrate()` 骨架
-- [ ] 大数格式化工具（format.ts，K/M/B/T/Qa…）
-- [ ] Vitest 接入 + 引擎核心单测骨架（tick 推进 / 超频倍率 / 离线结算数值自洽）
+> 工单与依赖顺序以 [TODO.md](../TODO.md) / [tasks/](../tasks/) 为准（编号 T 全局连续）。下列按实际执行序排列：
+
+- [ ] **T02** Vite + React + TS + Tailwind 初始化（pnpm）+ §3 目录结构
+- [ ] **T03** 大数底座：接入 `break_infinity.js`，引擎算式与存档统一走 Decimal（先定，后面全靠它）+ `format.ts`
+- [ ] **T36** 共享类型 `src/types.ts`（§5 全部类型，data/engine/stores 单一出口）
+- [ ] **T04** 存档系统：`SaveEnvelope` schema 版本头 + `migrate()` + Decimal serialize（依赖 T36 的 `PlayerState`）
+- [ ] **T09** Phase 1 数值草表（资源/机器/配方，引擎的「米」，前置于引擎）
+- [ ] **T05** `src/engine/` tick / recipe / era / quest 骨架 + Vitest 核心单测
+- [ ] **T06** Zustand store 初始化 + persist（接 T04 的 serialize）
+- [ ] **T07 / T08** ESLint + Prettier、CI（随脚手架）
 
 ### Phase 1：最小可玩版（预计 3-4 周）
 
@@ -1049,7 +1050,7 @@ function migrate(save: SaveEnvelope): SaveEnvelope { /* v1→v2→…→current 
 |------|------|---------|
 | 数值平衡失控 | 某些产线过强/过弱，破坏节奏 | Phase 1 数据少时容易手动调；Phase 2 以后建 Excel 模拟器辅助 |
 | localStorage 被清 | 玩家进度丢失 | IndexedDB 双备份 + 提醒定期导出 |
-| 大数溢出 | 资源数量超过 `Number.MAX_SAFE_INTEGER` | 使用 BigInt 或 `break_infinity.js` 大数库 |
+| 大数溢出 | 资源数量超过 `Number.MAX_SAFE_INTEGER` | 统一用 `break_infinity.js`（Decimal）——§2 已否决 BigInt（不能与小数倍率混算）。详见 §5.9 数值类型约定 |
 | 性能瓶颈 | 200 机器 × 16ms tick 卡帧 | Zustand selector 精准渲染 + tick 逻辑纯函数高效 + Web Worker 可选 |
 | 离线结算被时钟欺骗 | 手动改系统时钟获取不当离线收益 | 存档内记录 `lastKnownWallClock`——当时间回退或离线跨度异常时降级到保守估算，写入一次警告标记 |
 | GTNH 素材/署名 | fan project 分享时仍需尊重原作与素材许可 | 保留非商业声明、credits、素材来源清单；若公开发布，先替换不明确授权的素材 |

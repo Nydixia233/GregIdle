@@ -17,7 +17,7 @@
 - [docs/gtnh-idle-game-design.md](../docs/gtnh-idle-game-design.md) §5 数据模型 / §6 核心循环 / §6.3 电压效率
 - [docs/data-sourcing.md](../docs/data-sourcing.md)（电压/超频数值出处）
 - [AGENTS.md](../AGENTS.md) §4 架构约束（引擎纯函数无 I/O）
-- 依赖 T03（Decimal）、T09（数值草表——引擎的「米」，单测用真实配方而非假数据）
+- 依赖 T03（Decimal）、T36（共享类型 `src/types.ts`）、T09（数值草表——引擎的「米」，单测用真实配方而非假数据）
 - 时间单位：1 tick = 1 秒（已定，见设计文档 §12）
 
 ## 执行步骤

@@ -36,7 +36,9 @@
 
 **Phase 0：项目脚手架** —— 见 [TODO.md](TODO.md) 的 `T02`～`T09`。
 
-依赖顺序：**T02 脚手架（pnpm）→ T03 大数底座 + T04 SaveEnvelope（渗透最广）→ T09 数值草表（引擎的米）→ T05 引擎 tick + Vitest → T06 store/persist**，避免回头改序列化。T07 ESLint/Prettier、T08 CI 是脚手架自然组成，与初始化一起建。
+依赖顺序：**T02 脚手架（pnpm）→ T03 大数底座 → T36 共享类型（`src/types.ts`）→ T04 SaveEnvelope → T09 数值草表（引擎的米）→ T05 引擎 tick + Vitest → T06 store/persist**，避免回头改序列化。T07 ESLint/Prettier、T08 CI 是脚手架自然组成，与初始化一起建。
+
+> T36 必须早于 T04：T04 的 `SaveEnvelope.gameState` 是 `PlayerState`，该类型由 T36 定义。T03 早于 T36：类型里的 `resources` 等字段是 `Decimal`，需先有大数底座。
 
 ## 治理文档「何时建什么」触发清单
 

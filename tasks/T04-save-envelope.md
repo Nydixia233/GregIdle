@@ -15,7 +15,7 @@
 ## 输入来源
 
 - [docs/gtnh-idle-game-design.md](../docs/gtnh-idle-game-design.md) §9 存档机制（含「存档迁移」节）
-- [TODO.md](../TODO.md) / 依赖 T03
+- [TODO.md](../TODO.md) / 依赖 T03（Decimal）、T36（`PlayerState` 等类型——`SaveEnvelope.gameState` 即 `PlayerState`）
 
 ## 执行步骤
 
